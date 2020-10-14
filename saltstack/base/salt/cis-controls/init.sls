@@ -3,9 +3,7 @@
 
 {% if pillar['OS'] == 'centos7' %}
 {% set filesystems = ['cramfs', 'freevxfs', 'jffs2', 'hfs', 'hfsplus', 'squashfs', 'udf', 'fat'] %}
-
 {% for fs in filesystems %}
-
 {{ rule }} {{ fs }} create modrobe blacklist:
     cmd.run:
         - name: touch /etc/modprobe.d/salt_cis.conf
