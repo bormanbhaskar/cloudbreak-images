@@ -2,7 +2,9 @@
 #https://jira.cloudera.com/browse/CB-8897
 
 {% if pillar['OS'] == 'centos7' %}
+
 {% set filesystems = ['cramfs', 'freevxfs', 'jffs2', 'hfs', 'hfsplus', 'squashfs', 'udf', 'fat'] %}
+
 {% for fs in filesystems %}
 {{ rule }} {{ fs }} create modrobe blacklist:
     cmd.run:
